@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <style>
+    body{
+      background-color: #F9F9F9;
+    }
+    .bg-1 {
+      border: 1px solid #FFFFFF;
+      background-color: #FFFFFF;
+      width: 35em;
+      box-shadow: 0px 0px 5px 5px #F7F6F2;
+    } 
+    .active{
+      padding-top: 150px;
+    }
+  </style>
+  <body>
+    <h1 class="p-5 text-center text-info">Một Số Bài kiểm Tra Nổi Bật</h1>
+    <div class="container">
+
+
+
+      <div class="pt-5">
+        <div class="bg-1 mx-auto">
+          {% for item in items %}
+          <h2 class="pt-4 text-center">{{ item.content_name }}</h2>
+          <div class="d-flex justify-content-center align-items-center">
+            <img width="450px" src="{{ item.content_image.url }}">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="bg-1 mx-auto">
+        <h2 class="pt-4 text-center">Trắc nghiệm hóa học</h2>
+        <div class="d-flex justify-content-center">
+          <img width="450px" src="{% static "image/de1.png"%}">
+          <div class="active">
+            <a href="" class="nav-link">
+              <img width="30px" src="{% static "image/heart.png"%}">
+              <p class="text-dark">0</p>
+              <p></p
+            ></a>
+
+            <a href="" class="nav-link">
+              <img width="30px" src="{% static "image/comment1.png"%}">
+              <p class="text-dark">0</p>
+            </a>
+
+            <a href="" class="nav-link">
+              <img color="blue" width="30px" src="{% static "image/share1.png"%}">
+              <p class="text-dark">0</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="pt-5">
+       <div class="bg-1 mx-auto">
+        <h2 class="pt-4 text-center">Trắc nghiệm Toán Lớp 10</h2>
+        <div class="d-flex justify-content-center">
+          <img width="450px" src="{% static "image/de1.png"%}">
+          <div class="active">
+            <a href="" class="nav-link">
+              <img width="30px" src="{% static "image/heart.png"%}">
+              <p class="text-dark">0</p>
+              <p></p
+            ></a>
+
+            <a href="" class="nav-link">
+              <img width="30px" src="{% static "image/comment1.png"%}">
+              <p class="text-dark">0</p>
+            </a>
+
+            <a href="" class="nav-link">
+              <img color="blue" width="30px" src="{% static "image/share1.png"%}">
+              <p class="text-dark">0</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="pt-5">
+       <div class="bg-1 mx-auto">
+        <h2 class="pt-4 text-center">Trắc nghiệm Toán Lớp 12</h2>
+        <div class="d-flex justify-content-center">
+          <img width="450px" src="{% static "image/de1.png"%}">
+          <div class="active">
+            <a href="" class="nav-link">
+              <img width="30px" src="{% static "image/heart.png"%}">
+              <p class="text-dark">0</p>
+              <p></p
+            ></a>
+
+            <a href="" class="nav-link">
+              <img width="30px" src="{% static "image/comment1.png"%}">
+              <p class="text-dark">0</p>
+            </a>
+
+            <a href="" class="nav-link">
+              <img color="blue" width="30px" src="{% static "image/share1.png"%}">
+              <p class="text-dark">0</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+
+        form{
+           margin: 50px; 
+          
+        }
+
+    </style>
+  </head>
+  <body>
+    {% include "exam/navbar.html" %}
+ 
+
+
+<br><br><br>
+<div class="container">
+  <h3 style="text-align: center;">Đăng Ký Tài Khoản Giáo Viên</h3>
+<form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="first_name">Họ</label>
+          {% render_field userForm.first_name|attr:'required:true'  class="form-control"  placeholder="Họ" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="last_name">Tên</label>
+          {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Tên" %}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="mobile">Số điện thoại</label>
+          {% render_field teacherForm.mobile|attr:'required:true'  class="form-control" placeholder="Số điện thoại" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="address">Địa chỉ</label>
+          {% render_field teacherForm.address|attr:'required:true'  class="form-control" placeholder="Địa chỉ" %}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="username">Tài khoản</label>
+          {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="Tài khoản" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Mật khẩu</label>
+          {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="Mật khẩu" %}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="profile_pic">Ảnh đại điện</label>
+          {% render_field teacherForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
+        </div>
+        
+      </div>
+
+
+    <button type="submit" class="btn btn-success" style="border-radius:0px;">Đăng ký</button>
+  </form>
+</div>
+
+
+<br><br>
+{% include "exam/footer.html" %}
+  </body>
+</html>
