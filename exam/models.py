@@ -11,7 +11,7 @@ class Course(models.Model):
 class Content(models.Model):
     content_name = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
-    content_image = models.ImageField(upload_to='image/')
+    content_image = models.ImageField(upload_to='content/', null=True, blank=True)
     def __str__(self):
         return self.content_name
     

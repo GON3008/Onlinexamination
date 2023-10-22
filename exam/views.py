@@ -18,8 +18,7 @@ from django.contrib.auth.models import User
 
 def home_view(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect('afterlogin')  
-        
+        return HttpResponseRedirect('afterlogin')
     return render(request,'exam/index.html')
 
 
@@ -191,7 +190,7 @@ def admin_content_view(request):
 def admin_add_content_view(request):
     contentForm=forms.ContentForm()
     if request.method=='POST':
-        contentForm=forms.ContentForm(request.POST)
+        contentForm=forms.ContentForm(request.POST, request.FILES)
         if contentForm.is_valid():
             contentForm.save()
         else:
@@ -209,6 +208,19 @@ def delete_content_view(request,pk):
     content = models.Content.objects.get(id=pk)
     content.delete()
     return HttpResponseRedirect('/admin-view-content')
+
+@login_required(login_url='adminlogin')
+def update_content_view(request, pk):
+    content = models.Content.objects.get(id=pk)
+    if request.method=='POST':
+        contentForm = forms.ContentForm(request.POST, request.FILES, instance= content)
+        if contentForm.is_valid():
+            contentForm.save()
+            return redirect('admin-view-content')
+        else:
+            contentForm = forms.ContentForm(instance=content)
+        return  render(request, 'exam/update_content.html', {'contentForm':contentForm,'content':content})
+
 
 @login_required(login_url='adminlogin')
 def admin_course_view(request):

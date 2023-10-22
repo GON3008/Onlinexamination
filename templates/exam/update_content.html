@@ -1,0 +1,24 @@
+{% extends 'exam/adminbase.html' %}
+{% load widget_tweaks  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <form method="post" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">Example label</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label">Another label</label>
+  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+</div>
+    </form>
+{% endblock content %}
+</body>
+</html>

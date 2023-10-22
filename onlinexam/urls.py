@@ -49,7 +49,7 @@ urlpatterns = [
     path('admin-add-content', views.admin_add_content_view,name='admin-add-content'),
     path('admin-view-content', views.admin_view_content_view,name='admin-view-content'),
     path('delete-content/<int:pk>', views.delete_content_view,name='delete-content'),
-    # path('update-content/<int:pk>', views.update_content_view,name='update-content'),
+    path('update-content/<int:pk>',views.update_content_view,name='update-content'),
 
     path('admin-question', views.admin_question_view,name='admin-question'),
     path('admin-add-question', views.admin_add_question_view,name='admin-add-question'),

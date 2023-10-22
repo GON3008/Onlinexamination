@@ -14,7 +14,7 @@
 a:link {
       text-decoration: none;
     }
-  
+
 </style>
 </head>
 <h2 style="text-align:center;">Thêm Bài Viết</h2>
@@ -23,14 +23,17 @@ a:link {
   <div class="form-group">
     <label for="content_name">Tên bài viết</label>
     {% render_field contentForm.content_name class="form-control" placeholder="" %}
+      {{ contentForm.content_name.errors }}
 
-    <label for="description">Nội dung bài viet</label>
+    <label for="description">Nội dung bài viết</label>
     {% render_field contentForm.description|attr:'required:true' class="form-control" placeholder="" %}
+      {{ contentForm.description.errors }}
 
     <label for="content_image">Hình ảnh bài viết</label>
     {% render_field contentForm.content_image|attr:'required:true' class="form-control" %}
+      {{ contentForm.content_image.errors }}
   </div>
-  
+
 
   <button type="submit" class="btn btn-success" style="border-radius:0px;">Thêm bài viết</button>
 </form>
